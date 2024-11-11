@@ -1,0 +1,62 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i [matMenuTriggerFor]="menu" class="fas fa-bars"><mat-icon class="mat-18">list</mat-icon></i>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button [ngStyle]=" {'color': (activeMachine ? '#6a11cb' : 'black')}" [routerLink]="['/machine']" mat-menu-item>
+        <mat-icon>devices_other</mat-icon>
+        <span>Machines</span>
+      </button>
+      <!-- <button [ngStyle]=" {'color': (activeDashboard ? '#6a11cb' : 'black')}" (click)="openDialog()" mat-menu-item>
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </button> -->
+    </mat-menu>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link user" [ngStyle]=" {'color': (activeUser ? '#6a11cb' : 'black')}" [routerLink]="['/user']">B</a>
+        </li>
+        <li class="nav-item">
+          
+          <a class="nav-link" [ngStyle]=" {'color': (activeMachine ? '#6a11cb' : 'black')}" [routerLink]="['/machine']"><mat-icon>devices_other</mat-icon>Machines</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" [ngStyle]=" {'color': (activeDashboard ? '#6a11cb' : 'black')}" (click)="openDialog()">Dashboard</a>
+        </li> -->
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <!-- Notifications -->
+      <mat-icon (click)="clearLocalStorage()" class="mat-18">exit_to_app</mat-icon>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

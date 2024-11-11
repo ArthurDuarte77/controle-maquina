@@ -1,0 +1,22 @@
+button{
+  background-color: #f7f7f7;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button{
+    margin: 5px;
+  }
+}

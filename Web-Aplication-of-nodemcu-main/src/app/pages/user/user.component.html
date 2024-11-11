@@ -1,0 +1,16 @@
+<app-side-nav></app-side-nav>
+<div class="user-info">
+
+    <h2>User Information</h2>
+    <div class="info-item">
+      <label>Email:</label>
+      <span>{{ user.email }}</span>
+    </div>
+    <div class="info-item">
+      <label>Password:</label>
+
+      <button *ngIf="password == ''" (click)="openDialog()" type="button" class="btn btn-light">View</button>
+      <button *ngIf="password != ''" type="button" class="btn btn-light">{{password}}</button>
+    </div>
+  </div>
+  

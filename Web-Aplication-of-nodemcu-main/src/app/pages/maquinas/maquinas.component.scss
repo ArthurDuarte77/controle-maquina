@@ -1,0 +1,127 @@
+section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+  margin: 1rem;
+  .item-container {
+    box-shadow: -1px -1px 24px -3px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: -1px -1px 24px -3px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -1px -1px 24px -3px rgba(0, 0, 0, 1);
+    // border: 1px solid black;
+    border-radius: 1rem;
+    // background-color: #f7f7f7;
+    padding: 20px;
+    transition: transform 0.1s ease-in-out;
+    .title {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: black;
+      text-align: center;
+    }
+    .state {
+      font-weight: 800;
+      color: black;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .acessar-button {
+      width: 100%;
+      padding: 10px 10px;
+      margin: 5px;
+    }
+  }
+
+  .item-container:hover {
+    box-shadow: -1px -1px 400px -3px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: -1px -1px 400px -3px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -1px -1px 400px -3px rgba(0, 0, 0, 1);
+    transform: scale(1.05);
+  }
+}
+
+app-progress-spiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+@media (max-width: 800px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .acessar-button {
+    width: 100%;
+    padding: 5px 10px;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 500px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .acessar-button,
+  .rename-button {
+    padding: 3px 5px;
+  }
+}
+.error {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  border: none;
+  justify-content: space-between;
+}
+
+.acessar-button,
+.rename-button {
+  padding: 10px 20px;
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.acessar-button:hover,
+.rename-button:hover {
+  background-color: #2f3f9f;
+}
+
+.state {
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.on {
+  background-color: #99fe00 !important;
+}
+
+.off {
+  background-color: #fe0000 !important;
+}

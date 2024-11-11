@@ -1,0 +1,17 @@
+<app-progress-spiner *ngIf="hide == true"></app-progress-spiner>
+<ng-container *ngIf="hide == false" >
+  <app-side-nav></app-side-nav>
+  <section>
+    <div *ngFor="let item of groupedData" class="item-container">
+      <h1 class="title">{{item.nome}}</h1>
+      <h1 class="state" [ngClass]="{'on': item.state === 'ON', 'off': item.state === 'OFF'}">{{item.state}}</h1>
+      <div class="buttons">
+        <button class="acessar-button" [routerLink]="['home', item.nome]" routerLinkActive="router-link-active">
+          Acessar
+        </button>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+

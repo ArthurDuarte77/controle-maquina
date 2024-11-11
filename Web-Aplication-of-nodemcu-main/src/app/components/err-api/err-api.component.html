@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{data.title}}</h2>
+<mat-dialog-content  class="mat-typography">
+<h1>{{data.message}}</h1>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close *ngIf="data.redirect == true" [routerLink]="['/login']">Ok</button>
+  <button mat-button mat-dialog-close *ngIf="data.redirect == false">Ok</button>
+</mat-dialog-actions>

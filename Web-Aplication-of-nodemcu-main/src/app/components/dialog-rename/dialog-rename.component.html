@@ -1,0 +1,8 @@
+<div class="container" mat-dialog-content>
+  <p>Digite o novo nome da maquina</p>
+  <input matInput [(ngModel)]="data.animal">
+</div>
+<div class="btns" mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div>

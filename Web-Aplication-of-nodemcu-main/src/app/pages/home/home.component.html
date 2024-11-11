@@ -1,0 +1,73 @@
+<app-progress-spiner *ngIf="hide == true"></app-progress-spiner>
+
+<ng-container [ngStyle]="{'opacity': (hide ? 1 : 0) }">
+
+  <app-side-nav></app-side-nav>
+      <mat-form-field appearance="fill">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input  [(ngModel)]="minDate" matStartDate placeholder="Start date">
+        <input [(ngModel)]="maxDate" matEndDate placeholder="End date">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <button (click)="show()" mat-fab color="primary" aria-label="Example icon button with a menu icon">
+      <mat-icon>pageview</mat-icon>
+    </button>
+  <section>
+
+    <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="demo-id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="demo-counter">
+        <th mat-header-cell *matHeaderCellDef> Counter </th>
+        <td mat-cell *matCellDef="let element"> {{element.counter}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="demo-state">
+        <th mat-header-cell *matHeaderCellDef> State </th>
+        <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="demo-data">
+        <th mat-header-cell *matHeaderCellDef> data </th>
+        <td mat-cell *matCellDef="let element"> {{element.data | date: 'dd/MM/YYY, H:mm:ss '}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="demo-nome">
+        <th mat-header-cell *matHeaderCellDef> nome </th>
+        <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="demo-id_user">
+        <th mat-header-cell *matHeaderCellDef> id_user </th>
+        <td mat-cell *matCellDef="let element"> {{element.id_user}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+    <div class="chart-producao chart">
+      <canvas #ControleProducao></canvas>
+    </div>
+    <div class="chart-estado chart">
+      <canvas #ControleEstado></canvas>
+    </div>
+
+    <div class="box"><mat-icon class="mat-18">dns</mat-icon><h3>Quantidade de ciclos</h3> {{numberOfCycles}}</div>
+    <div class="box"><mat-icon class="mat-18">access_time</mat-icon><h3>Tempo Ligada</h3> {{onTime | secondsData}}</div>
+    <div class="box"><mat-icon class="mat-18">access_alarm</mat-icon><h3>Tempo Desligado</h3>  {{offTime | secondsData}}</div>
+    <div class="box"><mat-icon class="mat-18">slow_motion_video</mat-icon><h3>Tempo Produção</h3>  {{timeOfProduction | hoursAndMinutes}}</div>
+  </section>
+
+</ng-container>
